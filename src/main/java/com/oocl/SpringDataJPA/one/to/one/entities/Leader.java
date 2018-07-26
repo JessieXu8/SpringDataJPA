@@ -11,7 +11,7 @@ public class Leader {
 
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "klass_id")
     private Klass klass;
 

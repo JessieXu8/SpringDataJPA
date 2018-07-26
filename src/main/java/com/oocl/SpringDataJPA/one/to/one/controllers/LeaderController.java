@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.List;
+
 @RestController
 @RequestMapping("/leaders")
 public class LeaderController {
@@ -22,6 +25,12 @@ public class LeaderController {
             leader.getKlass().setLeader(leader);
         }
         return leaderRepository.save(leader);
+    }
+
+    @Transactional
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Leader> findALL(){
+        return leaderRepository.findAll();
     }
 
 }
