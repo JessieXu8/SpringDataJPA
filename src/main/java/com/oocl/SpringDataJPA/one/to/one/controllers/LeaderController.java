@@ -33,4 +33,12 @@ public class LeaderController {
         return leaderRepository.findAll();
     }
 
+    @Transactional
+    @DeleteMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public Leader delete(@PathVariable("id") Long id){
+        Leader leader = leaderRepository.findById(id).get();
+        leaderRepository.delete(leader);
+        return leader;
+    }
+
 }
