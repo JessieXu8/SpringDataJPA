@@ -1,18 +1,20 @@
 package com.oocl.SpringDataJPA.many.to.many.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "group")
+@Table(name = "oocl_group")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String groupname;
-
+    @JsonIgnore
     @ManyToMany(mappedBy = "groups")
     private List<User> users = new ArrayList<>();
 

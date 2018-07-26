@@ -1,4 +1,4 @@
 CREATE TABLE `user_group` (
-  `user_id`  BIGINT  ,
+  `user_id`  BIGINT,
   `group_id` BIGINT
 );

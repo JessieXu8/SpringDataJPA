@@ -19,6 +19,7 @@ public class LeaderController {
         this.leaderRepository=leaderRepository;
     }
 
+    @Transactional
     @PostMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Leader save(@RequestBody Leader leader){
         if(leader.getKlass()!=null){
