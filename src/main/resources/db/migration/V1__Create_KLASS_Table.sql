@@ -1,0 +1,4 @@
+CREATE TABLE `klass` (
+  `id`  BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `klassname` VARCHAR(20) NOT NULL
+);
